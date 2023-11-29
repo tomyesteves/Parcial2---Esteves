@@ -1,0 +1,47 @@
+<h2>{{title}}</h2>
+<div class="align-items-center d-flex col-12">
+    <form [formGroup]="editTestForm" (ngSubmit)="onEdit()">
+        <div class="mb-3">
+            <label for="id" class="form-label">Id (de la url)</label>
+            <input type="text" class="form-control" id="id" formControlName="id" name="id" type="text">
+            <div *ngIf="editTestForm.get('name')?.touched && editTestForm.get('name')?.errors?.['required']">
+                El id es obligatorio.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" formControlName="name" name="name" type="text">
+            <div *ngIf="editTestForm.get('name')?.touched && editTestForm.get('name')?.errors?.['required']">
+                El nombre es obligatorio.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="initials" class="form-label">Sigla</label>
+            <input type="text" class="form-control" id="initials" formControlName="initials" name="initials">
+            <div *ngIf="editTestForm.get('initials')?.touched && editTestForm.get('initials')?.errors?.['required']">
+                Las siglas son obligatorias.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="description" formControlName="description" name="initials">
+            <div
+                *ngIf="editTestForm.get('description')?.touched && editTestForm.get('description')?.errors?.['required']">
+                Las decripción es obligatoria.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="partCount" class="form-label">Partes</label>
+            <input type="number" class="form-control" id="partCount" formControlName="partCount" name="initials">
+        </div>
+        <div class="mb-3">
+            <label for="isActive" class="form-label">Estado</label>
+            <select class="form-select">
+                <option selected>Abrir para cambiar estado</option>
+                <option value="1">Activa</option>
+                <option value="2">Inactiva</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>

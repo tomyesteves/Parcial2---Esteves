@@ -1,0 +1,29 @@
+<h2>{{title}}</h2>
+<div class="align-items-center d-flex col-12">
+    <form [formGroup]="testForm" (ngSubmit)="onAdd()">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" formControlName="name" name="name" type="text">
+            <div *ngIf="testForm.get('name')?.touched && testForm.get('name')?.errors?.['required']">
+                El nombre es obligatorio.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="initials" class="form-label">Sigla</label>
+            <input type="text" class="form-control" id="initials" formControlName="initials" name="initials"
+                type="text">
+            <div *ngIf="testForm.get('initials')?.touched && testForm.get('initials')?.errors?.['required']">
+                Las iniciales son obligatorias.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="description" formControlName="description" name="initials"
+                type="text">
+            <div *ngIf="testForm.get('description')?.touched && testForm.get('description')?.errors?.['required']">
+                Las iniciales son obligatorias.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</div>

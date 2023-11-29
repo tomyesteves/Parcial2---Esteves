@@ -1,0 +1,12 @@
+<div class="col">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{test.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{test.initials}}</h6>
+            <h6 style="color: green;" *ngIf="test.isActive">Activa</h6>
+            <h6 style="color: red;" *ngIf="!test.isActive">Inactiva</h6>
+            <p class="card-text">{{test.description}}.</p>
+            <button class="btn btn-primary" (click)="this.edit()">Editar</button>
+        </div>
+    </div>
+</div>
