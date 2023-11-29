@@ -1,7 +1,8 @@
 <h2 class="text-center">{{getTitle()}}</h2>
-<button type="button" class="btn btn-success btn-sm" (click)="this.getRouter().navigate(['admin/form'])">Agregar
-    test</button>
 <div class="container">
+    <button type="button" class="btn btn-success btn-sm align-items-center"
+        (click)="this.getRouter().navigate(['admin/form'])">Agregar
+        test</button>
     <div class="row">
         <ul class="list-group">
             <app-admin-tests-list-item *ngFor="let test of tests" [test]="test"></app-admin-tests-list-item>
